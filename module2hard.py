@@ -2,6 +2,7 @@ def pairs_of_numbers(n):
     res = []
     res_ = []
     result = []
+    answer = ''
     for i in range(1, n+1):
         for j in range(1, n+1):
             if i != j:
@@ -14,13 +15,11 @@ def pairs_of_numbers(n):
                         result.append(res)
             res = []
             res_ = []
-
-    return result
+    for h in result:
+        for k in h:
+            answer += str(k)
+    return answer
 
 answer = pairs_of_numbers(int(input('Введите число от 3 до 20: ')))
-answer_ = ''
-for h in answer:
-    for k in h:
-        answer_ += str(k)
 
-print(answer_)
+print(answer)

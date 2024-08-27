@@ -2,7 +2,9 @@ class House:
     name: object
     houses_history = []
     def __new__(cls, *args, **kwargs):
+        obj = object.__new__(cls)
         cls.houses_history.append(args[0])
+        return obj
 
     def __init__(self, name, number_of_floors):
         self.name = name

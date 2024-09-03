@@ -37,7 +37,7 @@ class Figure:
 
     def set_sides(self, *new_sides):
         for k in new_sides:
-            if k != self.__is_valid_sides(k):
+            if k != self._is_valid_sides(k):
                 self.__sides = list(new_sides)
                 return self.__sides
 
@@ -72,7 +72,7 @@ class Cube(Figure):
          self.sides = sides
 
     def get_volume(self):
-        Vc = self.__sides[0] ** 3
+        Vc = self.sides[0] ** 3
         return Vc
 
 circle1 = Circle((200, 200, 100), 10) # (Цвет, стороны)

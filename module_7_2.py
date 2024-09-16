@@ -24,7 +24,7 @@ def custom_write(file_name, strings):
 
     #print(strings_position)
     for key, volue in strings_position.items():
-        print(key, volue)
+        print(key, volue, end = '')
 
 
 

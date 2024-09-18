@@ -1,15 +1,16 @@
-from idlelib.iomenu import encoding
-
+from pprint import pprint
 
 def custom_write(file_name, strings):
     strings_position = {}
+    file = open(file_name, 'a+')
+    #pprint(file.read())
     for string in strings:
-
-        file = open(file_name, 'a+', encoding = 'utf8')
         file.write(string + '\n')
-        file.close()
-
-    file = open(file_name, 'r', encoding = 'utf8')
+    #pprint(file.read())
+    #file.write(string + '\n')
+    file.close()
+    
+    file = open(file_name, 'r')
     st = 1
     b_line = 0
     while True:
@@ -21,12 +22,7 @@ def custom_write(file_name, strings):
             #print(st, b_line)
             st += 1
             b_line = file.tell()
-
-    #print(strings_position)
-    for key, volue in strings_position.items():
-        print(key, volue, end = '')
-
-
+    return strings_position
 
 info = [
     'Text for tell.',
@@ -36,4 +32,6 @@ info = [
     ]
 
 result = custom_write('test.txt', info)
-
+#print(result)
+for key, volue in result.items():
+    print(key, volue, end='')

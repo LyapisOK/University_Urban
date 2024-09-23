@@ -6,7 +6,7 @@ second_result = [(name_first, name_second)
                  for name_second in second_strings
                  if len(name_second) == len(name_first)]
 new_strings = first_strings + second_strings
-print(new_strings)
+#print(new_strings)
 third_result = {name_new_string: len(name_new_string)
                 for name_new_string in new_strings
                 if len(name_new_string) % 2 == 0 }

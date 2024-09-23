@@ -1,11 +1,9 @@
-def add_everything_up(a, b):
-    try:
-        c = a + b
-        return round(c, ndigits=3)
-    except TypeError as exc:
-        c = str(a) + str(b)
-        return c
+def apply_all_func(int_list, *functions):
+    result = {}
+    for function in functions:
+        #print(function)
+        result[function.__name__] = function(int_list)
+    return result
 
-print(add_everything_up(123.456, 'строка'))
-print(add_everything_up('яблоко', 4215))
-print(add_everything_up(123.456, 7))
+print(apply_all_func([6, 20, 15, 9], max, min))
+print(apply_all_func([6, 20, 15, 9], len, sum, sorted))

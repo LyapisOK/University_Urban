@@ -15,10 +15,13 @@ button_info = KeyboardButton(text="Информация")
 kb.add(button_calculate)
 kb.add(button_info)
 
-
 @dp.message_handler(commands = ['start'])
 async def start(message):
     await message.answer("Привет! Я бот помогающий твоему здоровью.", reply_markup = kb)
+
+@dp.message_handler()
+async def all_message(message):
+    await message.answer("Введите команду /start, чтобы начать общение.")
 
 @dp.message_handler(text='Информация')
 async def inform(message):

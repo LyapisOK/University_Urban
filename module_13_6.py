@@ -30,8 +30,8 @@ async def main_menu(message):
     await message.answer('Выберите опцию:', reply_markup = ikb)
 
 @dp.callback_query_handler(text='formulas')
-async def get_formulas(message):
-    await message.answer('10 х вес (кг) + 6,25 x рост (см) – 5 х возраст (г) + 5')
+async def get_formulas(call):
+    await call.message.answer('10 х вес (кг) + 6,25 x рост (см) – 5 х возраст (г) + 5')
 
 @dp.message_handler(commands = ['start'])
 async def start(message):
